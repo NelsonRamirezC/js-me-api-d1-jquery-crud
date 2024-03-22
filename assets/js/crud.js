@@ -10,6 +10,7 @@ $(function () {
     const cuerpoTabla = $("#cuerpoTabla");
 
     function agregarAlumnos(alumnosRecibidos){
+        alumnos.sort((a, b) => a.id - b.id);
 
         let acumuladorFilas = "";
         for (const alumno of alumnosRecibidos) {
@@ -61,6 +62,10 @@ $(function () {
 
         let nombre = $("#addNombre").val();
         let apellido = $("#addApellido").val();
+        
+        //ordenamos el array antes de obtener el id del último elemento
+        alumnos.sort((a, b) => a.id - b.id);
+        
         let ultimoAlumno = alumnos[alumnos.length -1];
         let ultimoId = ultimoAlumno.id;
 
