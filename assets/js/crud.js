@@ -129,7 +129,10 @@ $(function () {
 
                 let fila = $(`#fila-${idAlumno}`);
                 //elimina la etiqueta tr (fila) por su id
-                fila.remove();
+
+                fila.fadeOut(500, function() {
+                    fila.remove();
+                });
             };
             
 
